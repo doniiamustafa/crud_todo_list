@@ -57,7 +57,6 @@ class _AddUpdateTaskScreenState extends State<AddUpdateTaskScreen> {
     final TextEditingController dateController =
         TextEditingController(text: widget.date);
     final TextEditingController timeController = TextEditingController();
-    
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -79,75 +78,82 @@ class _AddUpdateTaskScreenState extends State<AddUpdateTaskScreen> {
             key: _formKey,
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                            const TitleWidget(title: AppStrings.color),
-                            SizedBox(
+              const TitleWidget(title: AppStrings.color),
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.01,
-                            ),
-                            Row(
+              ),
+              Row(
                 children: [
-                  Hero(
-                    tag: "success_1",
-                    child: FloatingActionButton.small(
-                      heroTag: null,
-                      onPressed: () {
-                        pink = true;
-                      },
-                      backgroundColor: Colors.pink,
+         
+                  InkWell(
+                    onTap: () => pink = true,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.1,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.pink,
+                      ),
                     ),
                   ),
-                  Hero(
-                    tag:  "success_1++",
-                    child: FloatingActionButton.small(
-                      heroTag: null,
-                      onPressed: () {
-                        green = true;
-                      },
-                      backgroundColor: Colors.green,
+       
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.02,
+                  ),
+                  InkWell(
+                    onTap: ()=> green = true,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.1,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.green,
+                      ),
                     ),
                   ),
                 ],
-                            ),
-                            SizedBox(
+              ),
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
-                            ),
-                            const TitleWidget(title: AppStrings.name),
-                            TextFormField(
+              ),
+              const TitleWidget(title: AppStrings.name),
+              TextFormField(
                 controller: nameController,
-                            ),
-                            SizedBox(
+              ),
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.04,
-                            ),
-                            const TitleWidget(title: AppStrings.description),
-                            SizedBox(
+              ),
+              const TitleWidget(title: AppStrings.description),
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.01,
-                            ),
-                            TextFormField(
+              ),
+              TextFormField(
                 controller: descriptionController,
                 maxLines: null,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                 ),
-                            ),
-                            SizedBox(
+              ),
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.04,
-                            ),
-                            const TitleWidget(title: AppStrings.date),
-                            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                            TextFormField(
+              ),
+              const TitleWidget(title: AppStrings.date),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              TextFormField(
                 controller: dateController,
-                            ),
-                            SizedBox(
+              ),
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.04,
-                            ),
-                            const TitleWidget(title: AppStrings.time),
-                            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                            TextFormField(
+              ),
+              const TitleWidget(title: AppStrings.time),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              TextFormField(
                 controller: timeController,
-                            ),
-                            SizedBox(
+              ),
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.04,
-                            ),
-                            Container(
+              ),
+              Container(
                   alignment: Alignment.center,
                   child: Hero(
                     tag: 'success--',
@@ -171,21 +177,20 @@ class _AddUpdateTaskScreenState extends State<AddUpdateTaskScreen> {
                             color: pink == true ? "pink" : "green",
                           ));
                         }
-                                  
-                        Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const TodoListScreen()));
+
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => const TodoListScreen()));
                         nameController.clear();
                         descriptionController.clear();
                         dateController.clear();
                         timeController.clear();
-                                  
+
                         log("Data Added");
                       },
                       child: const Text(AppStrings.add),
                     ),
                   ))
-                          ]),
+            ]),
           ),
         ),
       ),

@@ -94,14 +94,17 @@ class _TodoListScreenState extends State<TodoListScreen> {
                               child: Column(
                                 children: [
                                   ListTile(
-                                    leading: Hero(
-                                      tag: "success_2//",
-                                      child: FloatingActionButton.small(
-                                        heroTag: null,
-
-                                        onPressed: () {},
-                                        //? temporary solution for choosing color
-                                        backgroundColor: getColor == "pink"
+                                    leading: Container(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.1,
+                                      width:
+                                          MediaQuery.of(context).size.width *
+                                              0.1,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                           //? temporary solution for choosing color
+                                        color: getColor == "pink"
                                             ? Colors.pink
                                             : Colors.green,
                                       ),
