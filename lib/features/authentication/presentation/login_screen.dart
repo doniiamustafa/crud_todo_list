@@ -1,6 +1,5 @@
 import 'package:crud_local_testing_app/config/app_strings.dart';
 import 'package:crud_local_testing_app/core/dependency_injection.dart';
-import 'package:crud_local_testing_app/features/authentication/data/network/responses/responses.dart';
 import 'package:crud_local_testing_app/features/authentication/domain/usecases/auth_usecase.dart';
 import 'package:crud_local_testing_app/features/authentication/presentation/controller/login_controller.dart';
 import 'package:crud_local_testing_app/features/authentication/presentation/widgets/app_gradient_button.dart';

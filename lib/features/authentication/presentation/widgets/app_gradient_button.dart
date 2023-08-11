@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'dart:ui';
 
 import 'package:crud_local_testing_app/config/app_colors.dart';

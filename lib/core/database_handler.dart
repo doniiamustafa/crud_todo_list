@@ -23,7 +23,7 @@ class DatabaseHandler {
 
   _createDatabase(Database db, int version) async {
     await db.execute(
-        "CREATE TABLE myTodoList(id INTEGER PRIMARY KEY AUTOINCREMENT , status TEXT NOT NULL, color TEXT NOT NULL, description TEXT NOT NULL, date TEXT NOT NULL, ) ");
+        "CREATE TABLE myTodoList(id INTEGER PRIMARY KEY AUTOINCREMENT , status TEXT NOT NULL, color TEXT NOT NULL, description TEXT NOT NULL, date TEXT NOT NULL, time TEXT NOT NULL)");
   }
 
   Future<TodoModel> insert(TodoModel model) async {

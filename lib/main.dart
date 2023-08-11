@@ -1,5 +1,4 @@
 import 'package:crud_local_testing_app/core/dependency_injection.dart';
-import 'package:crud_local_testing_app/features/authentication/presentation/login_screen.dart';
 import 'package:crud_local_testing_app/features/todo_list/presentation/todo_list_screen.dart';
 import 'package:flutter/material.dart';
 
