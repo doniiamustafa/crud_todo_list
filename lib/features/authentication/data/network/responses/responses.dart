@@ -8,10 +8,10 @@ class LoginResponse {
   @JsonKey(name: "message")
   final String message;
 
-  @JsonKey(name: "body")
-  final Map<String, dynamic> body;
+  @JsonKey(name: "data")
+  final Map<String, dynamic> data;
 
-  const LoginResponse({required this.message, required this.body});
+  const LoginResponse({required this.message, required this.data});
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);

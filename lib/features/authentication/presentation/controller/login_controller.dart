@@ -5,7 +5,7 @@ import 'package:crud_local_testing_app/features/authentication/domain/usecases/a
 class LoginController {
   final LoginUsecase loginUseCase;
 
-  LoginController({
+   LoginController({
     required this.loginUseCase,
   });
 

@@ -88,10 +88,22 @@ class _LoginScreenState extends State<LoginScreen> {
                           loginController.login(
                               _emailTextEditingController.text,
                               _passwordTextEditingController.text);
+
+                          // ScaffoldMessenger.of(context).showSnackBar(
+                          //   const SnackBar(
+                          //     content: Text(
+                          //       "Welcome!",  //? if state is successfully logged in show Welcome! else show an error
+                          //       textAlign: TextAlign.center,
+                          //     ),
+                          //     backgroundColor: Colors.amberAccent,
+                          //   ),
+                          // );
+
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const TodoListScreen()));
+                                  builder: (context) =>
+                                      const TodoListScreen()));
                         },
                       )
                     ],

@@ -21,14 +21,14 @@ class AuthRepositoryImpl implements AuthRepository {
       log(" repo impl ${request.email}");
       final response = await authDataSource.login(request);
 
-      var data = response.body["data"];
-      List values = data.values
-          .toList(); //? token value doesn't have a "Key" in data map so, i should get all the values in a separate list
-      appPreferences.setToken(values[1]);
-      log("token${values[1]}");
+      final data = response.data;
+      log("data ${data["token"].toString()}");
+
+      appPreferences.setToken(data["token"]);
 
       return Right(response);
     } catch (e) {
+      log(e.toString());
       return const Left("Not found");
     }
   }
