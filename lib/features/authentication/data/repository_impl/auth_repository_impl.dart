@@ -17,17 +17,18 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<void, LoginResponse>> login(
       String email, String password) async {
     try {
-      log(" repo impl ${email}");
-
       final request = LoginRequest(email, password);
+      log(" repo impl ${request.email}");
       final response = await authDataSource.login(request);
 
-      final token = response.body["token"];  // incase token located in response body
-      appPreferences.setToken(token);
+      var data = response.body["data"];
+      List values = data.values
+          .toList(); //? token value doesn't have a "Key" in data map so, i should get all the values in a separate list
+      appPreferences.setToken(values[1]);
+      log("token${values[1]}");
 
       return Right(response);
     } catch (e) {
-      log(e.toString());
       return const Left("Not found");
     }
   }

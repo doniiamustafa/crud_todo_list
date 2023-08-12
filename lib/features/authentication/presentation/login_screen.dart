@@ -4,6 +4,7 @@ import 'package:crud_local_testing_app/features/authentication/domain/usecases/a
 import 'package:crud_local_testing_app/features/authentication/presentation/controller/login_controller.dart';
 import 'package:crud_local_testing_app/features/authentication/presentation/widgets/app_gradient_button.dart';
 import 'package:crud_local_testing_app/features/authentication/presentation/widgets/app_text_form_field.dart';
+import 'package:crud_local_testing_app/features/todo_list/presentation/todo_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -87,6 +88,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           loginController.login(
                               _emailTextEditingController.text,
                               _passwordTextEditingController.text);
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const TodoListScreen()));
                         },
                       )
                     ],

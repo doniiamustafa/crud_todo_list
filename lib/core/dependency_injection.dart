@@ -58,16 +58,3 @@ Future<void> initApp() async {
     );
   }
 }
-
-// initHome() {
-//   log("initHome");
-
-//    //bloc
-//   if (!GetIt.I.isRegistered<HomeBloc>()) {
-//     instance.registerFactory<HomeBloc>(
-//       () => HomeBloc(
-//         homeUseCase: instance<HomeUseCase>(),
-//       ),
-//     );
-//   }
-// }
